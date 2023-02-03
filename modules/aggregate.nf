@@ -37,7 +37,7 @@ process make_deliverables_yaml {
         errorStrategy 'ignore'
 
 	input:
-		path(out_dir)
+		val(out_dir)
 		val(multiqc)
 		val(summary)
 
