@@ -38,7 +38,7 @@ process get_gctab {
 
         script:
                 """
-		python ${params.script_folder}/AMYCNE/Generate_GC_tab.py --fa ${params.reference} --size ${params.tiddit_binsize} --n_mask > gc_tab
+		python ${params.script_folder}/Generate_GC_tab.py --fa ${params.reference} --size ${params.tiddit_binsize} --n_mask > gc_tab
 		"""
 }
 
@@ -56,6 +56,6 @@ process run_amyce {
 
         script:
                 """
-		python ${params.script_folder}/AMYCNE/AMYCNE.py --ff --coverage ${sampleID}/${sampleID}.tiddit.tab --gc gc_tab --Q ${params.Q} --scaling ${params.scaling} --intercept ${params.intercept} >${sampleID}/${sampleID}.tiddit.AMYCNE.tab
+		python ${params.script_folder}/AMYCNE.py --ff --coverage ${sampleID}/${sampleID}.tiddit.tab --gc gc_tab --Q ${params.Q} --scaling ${params.scaling} --intercept ${params.intercept} >${sampleID}/${sampleID}.tiddit.AMYCNE.tab
 		"""
 }
